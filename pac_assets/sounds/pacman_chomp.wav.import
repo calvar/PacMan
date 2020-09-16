@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pacman_chomp.wav-d476fe945a87001e1946f17845d0b572.sample"
+
+[deps]
+
+source_file="res://pac_assets/sounds/pacman_chomp.wav"
+dest_files=[ "res://.import/pacman_chomp.wav-d476fe945a87001e1946f17845d0b572.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
