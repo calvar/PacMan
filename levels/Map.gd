@@ -2,12 +2,17 @@ extends Node2D
 
 onready var intro_music = get_node("Sound/Intro")
 onready var small_pill = preload("res://objects/SmallPill.tscn")
+onready var value = get_node("GUI/ColorRect/HBoxContainer/Value")
+onready var PacMan = get_node("Pacman")
+
 var arr = []
 var pills = []
 
 func _ready():
+	PacMan.connect("newscore",self,"_on_PacMannewscore")
 	pill_positions()
 	play_intro()
+	value.text = "0"
 
 func _process(delta):
 	pass
@@ -45,3 +50,5 @@ func pill_positions():
 func play_intro():
 	intro_music.play()
 
+func _on_PacMannewscore():
+	value.text = str(PacMan.score)

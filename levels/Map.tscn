@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://pac_assets/graphics/pac_map.png" type="Texture" id=1]
 [ext_resource path="res://characters/Pacman.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Map.gd" type="Script" id=3]
 [ext_resource path="res://sound/Sound.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/Start.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 92, 35, 60, 35, 60, 19, 92, 19 )
@@ -223,6 +225,8 @@ points = PoolVector2Array( 224, 107, 180, 107, 180, 75, 220, 75, 220, 3, 116, 3,
 [node name="Map" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 23 )
 format = 1
@@ -232,3 +236,9 @@ tile_data = PoolIntArray( 0, 0, 0 )
 position = Vector2( 112, 188 )
 
 [node name="Sound" parent="." instance=ExtResource( 4 )]
+
+[node name="Start" parent="." instance=ExtResource( 6 )]
+margin_left = 70.5
+margin_top = 125.5
+margin_right = 163.5
+margin_bottom = 142.5

@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 export var SPEED = 100
 var velocity = Vector2(0,0)
+signal newscore
+var can_move = false
 
 var score = 0
 
@@ -27,8 +29,13 @@ func move(delta):
 		position.x = 0 
 
 func _process(delta):
-	move(delta)
+	if can_move:
+		move(delta)
 
 func eat_small_pill():
+	emit_signal("newscore")
 	score += 10
-	print(score)
+
+
+func _on_Timer_timeout():
+	can_move = true
