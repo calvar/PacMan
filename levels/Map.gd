@@ -1,15 +1,28 @@
 extends Node2D
 
+onready var intro_music = get_node("Sound/Intro")
 onready var small_pill = preload("res://objects/SmallPill.tscn")
 var arr = []
 var pills = []
 
 func _ready():
-	var map = get_tree().get_root().find_node("Map",true,false)
 	pill_positions()
+	play_intro()
+
+func _process(delta):
+	pass
+
+func pill_positions():
+	var file = File.new()
+	file.open("res://pac_assets/pill_pos.json", file.READ)
+	var text = file.get_as_text()
+	var jsn = JSON.parse(text)
+	arr = jsn.result
+	file.close()
 	var cont = 0
 	var offx = 12
 	var offy = 12
+	var map = get_tree().get_root().find_node("Map",true,false)
 	for i in range(len(arr)):
 		for j in range(len(arr[i])):
 			if(arr[i][j] == 1):
@@ -29,9 +42,6 @@ func _ready():
 				map.add_child(pills[cont])
 				cont += 1
 
-func pill_positions():
-	var file = File.new()
-	file.open("res://pac_assets/pill_pos.json", file.READ)
-	var text = file.get_as_text()
-	var jsn = JSON.parse(text)
-	arr = jsn.result
+func play_intro():
+	intro_music.play()
+
