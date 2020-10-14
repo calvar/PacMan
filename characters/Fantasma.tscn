@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/Fantasma.gd" type="Script" id=1]
@@ -26,6 +27,20 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "PhantDown"
 length = 0.4
+=======
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://pac_assets/graphics/ghost_blinky.png" type="Texture" id=1]
+[ext_resource path="res://characters/Fantasma.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.77829
+height = 0.0
+
+[sub_resource type="Animation" id=5]
+resource_name = "phantom_move_down"
+length = 0.8
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -34,23 +49,37 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0, 0.2 ),
+=======
+"times": PoolRealArray( 0, 0.4 ),
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 4, 5 ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=4]
 resource_name = "PhantLeft"
 length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
+=======
+[sub_resource type="Animation" id=3]
+resource_name = "phantom_move_left"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -58,11 +87,21 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
+=======
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -72,6 +111,17 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "PhantRight"
 length = 0.4
+=======
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "phantom_move_right"
+length = 0.8
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -80,7 +130,11 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0, 0.2 ),
+=======
+"times": PoolRealArray( 0, 0.4 ),
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 1 ]
@@ -92,15 +146,25 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0.1 ),
+=======
+"times": PoolRealArray( 0.8 ),
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=6]
 resource_name = "PhantUp"
 length = 0.4
+=======
+[sub_resource type="Animation" id=4]
+resource_name = "phantom_move_up"
+length = 0.8
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -109,12 +173,17 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+<<<<<<< HEAD
 "times": PoolRealArray( 0, 0.2 ),
+=======
+"times": PoolRealArray( 0, 0.4 ),
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 2, 3 ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="AnimationNodeStateMachine" id=7]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
@@ -143,3 +212,28 @@ tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 8 )
+=======
+[node name="Fantasma" type="Area2D"]
+position = Vector2( 0.210228, -0.420448 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.21022, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.21022, -1.47157 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "phantom_move_left"
+anims/phantom_move_down = SubResource( 5 )
+anims/phantom_move_left = SubResource( 3 )
+anims/phantom_move_right = SubResource( 2 )
+anims/phantom_move_up = SubResource( 4 )
+>>>>>>> 32da0732df10cd72fc7045c3b1a6abbab753356e
