@@ -344,7 +344,7 @@ position = Vector2( 100, 236 )
 position = Vector2( 124, 236 )
 
 [node name="Pacman" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 190 )
+position = Vector2( 112, 140 )
 
 [node name="Sound" parent="." instance=ExtResource( 4 )]
 
