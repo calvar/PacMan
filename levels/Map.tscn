@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://pac_assets/graphics/pac_map.png" type="Texture" id=1]
 [ext_resource path="res://characters/Pacman.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sound/Sound.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/Start.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/Ghost.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 92, 35, 60, 35, 60, 19, 92, 19 )
@@ -222,23 +223,136 @@ points = PoolVector2Array( 224, 107, 180, 107, 180, 75, 220, 75, 220, 3, 116, 3,
 } ]
 0/z_index = 0
 
+[sub_resource type="NavigationPolygon" id=24]
+vertices = PoolVector2Array( 210, 44, 174, 44, 50, 40, 54, 40, 214, 238, 10, 238, 98, 234, 102, 234, 14, 234, 170, 190, 150, 190, 98, 186, 102, 186, 210, 166, 174, 166, 146, 162, 150, 162, 224, 118, 174, 118, 170, 114, 174, 114, 146, 92, 114, 92, 98, 88, 102, 88, 210, 40, 214, 10, 214, 70, 210, 14, 98, 166, 54, 166, 74, 162, 78, 162, 50, 66, 50, 44, 54, 44, 54, 114, 146, 138, 150, 118, 170, 186, 170, 166, 174, 210, 126, 166, 122, 162, 54, 162, 122, 10, 174, 14, 210, 66, 174, 70, 174, 66, 150, 44, 150, 70, 146, 66, 146, 44, 126, 70, 122, 66, 122, 88, 126, 88, 214, 162, 214, 190, 210, 186, 174, 162, 170, 162, 122, 186, 126, 186, 198, 190, 194, 186, 194, 210, 198, 210, 214, 210, 210, 234, 210, 214, 170, 214, 150, 214, 146, 210, 146, 190, 78, 190, 54, 186, 126, 214, 122, 210, 122, 234, 126, 234, 54, 190, 54, 214, 50, 210, 50, 166, 14, 214, 30, 210, 10, 210, 26, 210, 224, 114, 170, 44, 78, 44, 170, 118, 150, 114, 150, 88, 114, 108, 132, 108, 132, 124, 92, 124, 110, 108, 92, 108, 110, 92, 78, 92, 74, 88, 74, 114, 78, 138, 30, 186, 26, 190, 14, 186, 10, 190, 10, 162, 14, 166, 50, 162, 50, 118, 0, 118, 0, 114, 50, 114, 174, 40, 170, 40, 170, 14, 126, 14, 122, 40, 126, 40, 102, 66, 98, 70, 78, 66, 74, 70, 74, 44, 14, 40, 14, 44, 146, 142, 78, 142, 74, 118, 102, 162, 54, 118, 50, 70, 102, 40, 98, 40, 102, 10, 98, 14, 10, 10, 54, 14, 102, 210, 98, 214, 78, 210, 74, 214, 74, 190, 14, 66, 10, 70, 14, 14, 50, 14 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 6, 5 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 13, 14, 15, 16 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24 ), PoolIntArray( 25, 26, 27, 0 ), PoolIntArray( 26, 25, 28 ), PoolIntArray( 29, 30, 31, 32 ), PoolIntArray( 33, 34, 35, 36 ), PoolIntArray( 37, 21, 38, 16 ), PoolIntArray( 39, 40, 14, 41 ), PoolIntArray( 15, 14, 40 ), PoolIntArray( 15, 40, 42, 43 ), PoolIntArray( 44, 31, 30 ), PoolIntArray( 45, 26, 28, 46 ), PoolIntArray( 47, 27, 48, 49 ), PoolIntArray( 50, 51, 52, 53 ), PoolIntArray( 52, 51, 54, 55 ), PoolIntArray( 56, 55, 54, 57 ), PoolIntArray( 58, 59, 60, 13 ), PoolIntArray( 61, 58, 13 ), PoolIntArray( 61, 13, 62 ), PoolIntArray( 63, 43, 42, 64 ), PoolIntArray( 60, 59, 65, 66 ), PoolIntArray( 67, 66, 65, 68 ), PoolIntArray( 69, 4, 70, 71 ), PoolIntArray( 68, 69, 71, 72 ), PoolIntArray( 67, 68, 72 ), PoolIntArray( 41, 67, 72 ), PoolIntArray( 41, 72, 9 ), PoolIntArray( 39, 41, 9 ), PoolIntArray( 10, 73, 74, 75 ), PoolIntArray( 11, 10, 75 ), PoolIntArray( 11, 75, 76, 77 ), PoolIntArray( 74, 73, 78, 79 ), PoolIntArray( 80, 79, 78, 81 ), PoolIntArray( 82, 83, 84, 85 ), PoolIntArray( 84, 83, 86, 87 ), PoolIntArray( 8, 5, 88, 86 ), PoolIntArray( 86, 88, 89 ), PoolIntArray( 87, 86, 89 ), PoolIntArray( 20, 90, 17 ), PoolIntArray( 48, 20, 19, 91 ), PoolIntArray( 49, 48, 91 ), PoolIntArray( 1, 49, 91 ), PoolIntArray( 2, 1, 91 ), PoolIntArray( 2, 91, 50 ), PoolIntArray( 2, 50, 53 ), PoolIntArray( 2, 53, 92 ), PoolIntArray( 18, 61, 62, 93 ), PoolIntArray( 19, 18, 93, 94 ), PoolIntArray( 94, 93, 38 ), PoolIntArray( 94, 38, 21 ), PoolIntArray( 95, 94, 21 ), PoolIntArray( 57, 95, 21 ), PoolIntArray( 96, 97, 98, 99, 100 ), PoolIntArray( 99, 101, 100 ), PoolIntArray( 96, 100, 102, 22 ), PoolIntArray( 23, 22, 102 ), PoolIntArray( 23, 102, 103, 104 ), PoolIntArray( 105, 104, 103, 106 ), PoolIntArray( 64, 39, 9 ), PoolIntArray( 107, 87, 89, 108 ), PoolIntArray( 109, 107, 108, 110 ), PoolIntArray( 109, 110, 111, 112 ), PoolIntArray( 112, 111, 113, 85 ), PoolIntArray( 114, 115, 116, 117 ), PoolIntArray( 27, 47, 0 ), PoolIntArray( 118, 25, 0 ), PoolIntArray( 118, 0, 119 ), PoolIntArray( 46, 118, 119, 120 ), PoolIntArray( 45, 46, 120 ), PoolIntArray( 45, 120, 121 ), PoolIntArray( 122, 45, 121, 123 ), PoolIntArray( 81, 70, 4 ), PoolIntArray( 56, 57, 21 ), PoolIntArray( 24, 56, 21 ), PoolIntArray( 124, 24, 23, 125 ), PoolIntArray( 126, 124, 125, 127 ), PoolIntArray( 126, 127, 128, 92 ), PoolIntArray( 2, 92, 128 ), PoolIntArray( 2, 128, 35 ), PoolIntArray( 2, 35, 34, 129 ), PoolIntArray( 129, 34, 130 ), PoolIntArray( 82, 85, 113 ), PoolIntArray( 82, 113, 114 ), PoolIntArray( 123, 119, 0 ), PoolIntArray( 16, 62, 13 ), PoolIntArray( 16, 15, 131 ), PoolIntArray( 37, 16, 131 ), PoolIntArray( 106, 37, 131, 132 ), PoolIntArray( 105, 106, 132 ), PoolIntArray( 105, 132, 32, 133 ), PoolIntArray( 63, 64, 9 ), PoolIntArray( 12, 63, 9 ), PoolIntArray( 134, 12, 11, 29 ), PoolIntArray( 32, 134, 29 ), PoolIntArray( 32, 31, 133 ), PoolIntArray( 36, 105, 133, 135 ), PoolIntArray( 33, 36, 135 ), PoolIntArray( 33, 135, 44, 136 ), PoolIntArray( 82, 114, 117 ), PoolIntArray( 82, 117, 136, 77 ), PoolIntArray( 122, 123, 0 ), PoolIntArray( 137, 122, 0 ), PoolIntArray( 137, 0, 138 ), PoolIntArray( 139, 137, 138, 140 ), PoolIntArray( 141, 139, 140, 142 ), PoolIntArray( 80, 81, 4 ), PoolIntArray( 7, 80, 4 ), PoolIntArray( 143, 7, 6, 144 ), PoolIntArray( 145, 143, 144, 146 ), PoolIntArray( 145, 146, 147, 76 ), PoolIntArray( 77, 76, 147 ), PoolIntArray( 77, 147, 82 ), PoolIntArray( 30, 77, 136 ), PoolIntArray( 44, 30, 136 ), PoolIntArray( 148, 33, 136, 149 ), PoolIntArray( 148, 149, 141, 130 ), PoolIntArray( 129, 130, 141 ), PoolIntArray( 150, 129, 141 ), PoolIntArray( 151, 150, 141 ), PoolIntArray( 151, 141, 142 ), PoolIntArray( 151, 142, 3, 2 ), PoolIntArray( 0, 3, 138 ) ]
+outlines = [ PoolVector2Array( 10, 10, 102, 10, 102, 40, 122, 40, 122, 10, 214, 10, 214, 70, 174, 70, 174, 114, 224, 114, 224, 118, 174, 118, 174, 162, 214, 162, 214, 190, 198, 190, 198, 210, 214, 210, 214, 238, 10, 238, 10, 210, 26, 210, 26, 190, 10, 190, 10, 162, 50, 162, 50, 118, 0, 118, 0, 114, 50, 114, 50, 70, 10, 70 ), PoolVector2Array( 14, 14, 50, 14, 50, 40, 14, 40 ), PoolVector2Array( 54, 40, 54, 14, 98, 14, 98, 40 ), PoolVector2Array( 126, 40, 126, 14, 170, 14, 170, 40 ), PoolVector2Array( 174, 40, 174, 14, 210, 14, 210, 40 ), PoolVector2Array( 14, 44, 50, 44, 50, 66, 14, 66 ), PoolVector2Array( 54, 44, 74, 44, 74, 70, 98, 70, 98, 88, 74, 88, 74, 114, 54, 114 ), PoolVector2Array( 78, 44, 146, 44, 146, 66, 122, 66, 122, 88, 102, 88, 102, 66, 78, 66 ), PoolVector2Array( 150, 44, 170, 44, 170, 114, 150, 114, 150, 88, 126, 88, 126, 70, 150, 70 ), PoolVector2Array( 78, 92, 110, 92, 110, 108, 92, 108, 92, 124, 132, 124, 132, 108, 114, 108, 114, 92, 146, 92, 146, 138, 78, 138 ), PoolVector2Array( 174, 44, 210, 44, 210, 66, 174, 66 ), PoolVector2Array( 54, 118, 74, 118, 74, 162, 54, 162 ), PoolVector2Array( 78, 142, 146, 142, 146, 162, 122, 162, 122, 186, 102, 186, 102, 162, 78, 162 ), PoolVector2Array( 150, 118, 170, 118, 170, 162, 150, 162 ), PoolVector2Array( 54, 166, 98, 166, 98, 186, 54, 186 ), PoolVector2Array( 14, 166, 50, 166, 50, 210, 30, 210, 30, 186, 14, 186 ), PoolVector2Array( 126, 166, 170, 166, 170, 186, 126, 186 ), PoolVector2Array( 174, 166, 210, 166, 210, 186, 194, 186, 194, 210, 174, 210 ), PoolVector2Array( 14, 234, 14, 214, 54, 214, 54, 190, 74, 190, 74, 214, 98, 214, 98, 234 ), PoolVector2Array( 78, 190, 146, 190, 146, 210, 122, 210, 122, 234, 102, 234, 102, 210, 78, 210 ), PoolVector2Array( 126, 214, 150, 214, 150, 190, 170, 190, 170, 214, 210, 214, 210, 234, 126, 234 ) ]
+
 [node name="Map" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+margin_top = -0.374573
+margin_bottom = 39.6254
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 23 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0 )
 
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 24 )
+
+[node name="Destinations" type="Node" parent="Navigation2D"]
+
+[node name="Position0" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 12 )
+
+[node name="Position1" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 12 )
+
+[node name="Position2" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 12, 42 )
+
+[node name="Position3" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 42 )
+
+[node name="Position4" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 100, 44 )
+
+[node name="Position5" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 124, 44 )
+
+[node name="Position6" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 148, 44 )
+
+[node name="Position7" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 44 )
+
+[node name="Position8" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 212, 44 )
+
+[node name="Position9" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 68 )
+
+[node name="Position10" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 68 )
+
+[node name="Position11" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 100, 92 )
+
+[node name="Position12" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 124, 92 )
+
+[node name="Position13" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 116 )
+
+[node name="Position14" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 76, 116 )
+
+[node name="Position15" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 148, 116 )
+
+[node name="Position16" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 116 )
+
+[node name="Position17" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 76, 140 )
+
+[node name="Position18" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 148, 140 )
+
+[node name="Position19" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 164 )
+
+[node name="Position20" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 76, 164 )
+
+[node name="Position21" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 148, 164 )
+
+[node name="Position22" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 164 )
+
+[node name="Position23" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 52, 188 )
+
+[node name="Position24" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 76, 188 )
+
+[node name="Position25" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 100, 188 )
+
+[node name="Position26" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 124, 188 )
+
+[node name="Position27" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 148, 188 )
+
+[node name="Position28" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 172, 188 )
+
+[node name="Position29" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 28, 212 )
+
+[node name="Position30" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 100, 236 )
+
+[node name="Position31" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 124, 236 )
+
 [node name="Pacman" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 188 )
+position = Vector2( 112, 190 )
 
 [node name="Sound" parent="." instance=ExtResource( 4 )]
 
 [node name="Start" parent="." instance=ExtResource( 6 )]
-margin_left = 70.5
-margin_top = 125.5
-margin_right = 163.5
-margin_bottom = 142.5
+margin_left = 66.0
+margin_top = 130.0
+margin_right = 159.0
+margin_bottom = 147.0
+
+[node name="Ghost" parent="." instance=ExtResource( 7 )]
+position = Vector2( 52, 12 )
